@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محاسبه‌گر تخفیف</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
+    <main class="calculator-card">
+      <h1>محاسبه‌گر تخفیف</h1>
+      <p class="description">
+        قیمت کالا و درصد تخفیف را وارد کن تا مبلغ پرداختی محاسبه شود.
+      </p>
+      <form id="discount-form">
+        <div class="field">
+          <label for="price">قیمت اصلی کالا</label>
+          <input
+            type="number"
+            id="price"
+            min="10000"
+            step="500"
+            placeholder="مثلا ۲۵۰۰۰ تومان"
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="discount">درصد تخفیف</label>
+          <input
+            type="number"
+            id="discount"
+            min="5"
+            max="100"
+            step="5"
+            placeholder="مثلا ۱۵٪"
+            required
+          />
+        </div>
+        <div class="tax-option">
+          <span>اضافه کردن ۹٪ مالیات</span>
+          <input type="checkbox" id="include-tax" class="hidden-tax-checkbox" />
+          <label
+            for="include-tax"
+            class="custom-tax-btn"
+            title="تغییر وضعیت مالیات"
+          >
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-width="1.5"
+                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+              ></path>
+              <path stroke-width="1.5" d="M8 12H16"></path>
+              <path stroke-width="1.5" d="M12 16V8"></path>
+            </svg>
+          </label>
+        </div>
+
+        <button type="submit">محاسبه قیمت</button>
+      </form>
+      <section class="results" id="results" aria-live="polite">
+        <p>مبلغ تخفیف: <span id="discount-amount">—</span></p>
+        <p>قیمت پس از تخفیف: <span id="discounted-price">—</span></p>
+        <p>مبلغ مالیات: <span id="tax-amount">—</span></p>
+        <p class="final-price">
+          مبلغ نهایی پرداختی: <span id="final-price">—</span>
+        </p>
+      </section>
+    </main>
+    <script src="assets/scripts/script.js"></script>
+  </body>
+</html>

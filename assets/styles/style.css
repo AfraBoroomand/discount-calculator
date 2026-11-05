@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Light.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Light.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Medium.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Medium.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Bold.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IRANSans", sans-serif;
+}
+:root {
+  --bg-creamy: #fff8f0;
+  --accent-light: #c08552;
+  --accent-deep: #8c5a3c;
+  --dark-coffee: #4b2e2b;
+  --white: #ffffff;
+}
+body {
+  background-image: url("../img/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--dark-coffee);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.calculator-card {
+  background-color: var(--bg-creamy);
+  border: 2px solid var(--dark-coffee);
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+}
+h1 {
+  color: var(--accent-deep);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+.description {
+  color: var(--dark-coffee);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.field {
+  margin-bottom: 1rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-coffee);
+}
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: var(--bg-creamy);
+  color: var(--dark-coffee);
+}
+input:focus {
+  outline: 2px solid var(--accent-light);
+}
+.tax-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 16px 0;
+  color: var(--dark-coffee);
+  font-size: 14px;
+}
+.hidden-tax-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.custom-tax-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+.custom-tax-btn svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--accent-light);
+  fill: none;
+  transition: all 0.3s ease;
+}
+.custom-tax-btn:hover {
+  transform: rotate(90deg);
+}
+.hidden-tax-checkbox:checked + .custom-tax-btn svg {
+  stroke: var(--dark-coffee);
+  fill: var(--accent-light);
+  transform: rotate(45deg);
+}
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--accent-light);
+  color: var(--bg-creamy);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: var(--accent-deep);
+}
+.results {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--accent-deep);
+  color: var(--dark-coffee);
+}
